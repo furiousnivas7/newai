@@ -4,6 +4,6 @@ beautifulsoup4
 requests
 langchain
 langchain-community
-huggingface_hub
 faiss-cpu
 transformers
+sentence-transformers
