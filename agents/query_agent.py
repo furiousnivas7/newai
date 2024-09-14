@@ -4,7 +4,8 @@ from transformers import pipeline
 
 # Load embeddings and models
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-vector_store = FAISS.load_local("path_to_index", embeddings)
+# Allow dangerous deserialization since we trust our pickle file source
+vector_store = FAISS.load_local("path_to_index", embeddings, allow_dangerous_deserialization=True)
 
 qa = RetrievalQA.from_chain_type(llm=pipeline("text-generation"), retriever=vector_store.as_retriever())
 
