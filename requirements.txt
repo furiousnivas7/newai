@@ -1,0 +1,8 @@
+streamlit
+pandas
+beautifulsoup4
+requests
+langchain
+huggingface_hub
+faiss-cpu
+transformers
